@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css.css">
+  <title>Carrinho de Compras</title>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Lista de produtos -->
+    <section class="produtos">
+      <div class="cabecalho-produtos">
+        <h2>Meus Produtos</h2>
+        <button class="icon" id="btn-carrinho">
+          🛒 
+          <span class="qtd-itens" id="qtd-itens">0</span>
+        </button>
+      </div>
+
+      <div class="lista-produtos" id="lista-produtos">
+        <!-- Produtos serão preenchidos dinamicamente pelo JS -->
+      </div>
+    </section>
+
+    <!-- Carrinho -->
+    <aside class="carrinho" id="carrinho">
+      <div class="cabecalho-carrinho">
+        <h2>Meu Carrinho</h2>
+      </div>
+
+      <div class="itens-carrinho" id="itens-carrinho">
+        <!-- Itens adicionados pelo JS -->
+      </div>
+
+      <div class="resumo-carrinho">
+        <div class="linha-resumo">
+          <span>Descontos</span>
+          <span class="valor-desconto" id="valor-desconto">R$ 0,00</span>
+        </div>
+        <div class="linha-resumo total">
+          <strong>Total</strong>
+          <strong class="valor-total" id="valor-total">R$ 0,00</strong>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

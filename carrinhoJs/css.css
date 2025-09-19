@@ -1,0 +1,175 @@
+/* Reset básico de margem, padding e box-sizing */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo do body */
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Container geral que envolve produtos e carrinho */
+.container {
+  display: flex;
+  gap: 20px;
+  max-width: 1400px;
+  width: 100%;
+  flex-wrap: wrap;           /* Permite quebrar linha em telas menores */
+  align-items: flex-start;    /* Alinha os elementos no topo */
+  justify-content: space-between; /* Distribui os elementos para as extremidades */
+}
+
+/* ----- PRODUTOS ----- */
+.produtos {
+  flex: 1;                    /* Ocupa o espaço disponível */
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* Cabeçalho da seção de produtos */
+.cabecalho-produtos{
+  display: flex;
+  justify-content: space-between; /* Título e botão nas extremidades */
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.icon {
+  position: relative; /* necessário para o CARRINHO se posicionar sobre ele */
+  background: transparent;
+  border: none;
+  font-size: 24px; /* aumenta o tamanho do ícone se quiser */
+}
+
+.qtd-itens {
+  position: absolute;    /* sobreposto ao botão */
+  top: -11px;             /* ajusta a posição vertical */
+  right: -11px;           /* ajusta a posição horizontal */
+  background: red;       /* cor do círculo */
+  color: white;          /* cor do texto */
+  border-radius: 50%;    /* deixa redondo */
+  padding: 2px 6px;      /* tamanho do círculo */
+  font-size: 12px;       /* tamanho do número */
+  font-weight: bold;
+ 
+ 
+ 
+ 
+ 
+}
+
+/* Lista de produtos organizada em grid */
+.lista-produtos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Sempre 4 colunas */
+  gap: 20px;                             /* Espaçamento entre produtos */
+}
+
+/* Card individual de produto */
+.produto {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;   /* Empilha elementos verticalmente */
+  align-items: center;
+}
+
+/* Imagem do produto */
+.produto img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;        /* Mantém proporção da imagem */
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+/* Nome do produto */
+.nome-produto {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+/* Botão de adicionar ao carrinho */
+.botao-adicionar {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+/* Hover do botão */
+.botao-adicionar:hover {
+  background: #0056b3;
+}
+
+/* ----- CARRINHO ----- */
+.carrinho {
+  flex: 0 0 300px;          /* Largura fixa */
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: none;            /* Inicialmente escondido */
+  flex-direction: column;
+  height: 300px;
+}
+
+/* Carrinho visível */
+.carrinho.show {
+  display: flex;
+}
+
+/* Cabeçalho do carrinho */
+.cabecalho-carrinho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+
+
+/* Lista de itens do carrinho */
+.itens-carrinho {
+  flex-grow: 1;             /* Ocupa espaço restante */
+  overflow-y: auto;         /* Adiciona rolagem se necessário */
+  margin-bottom: 20px;
+}
+
+/* Item individual no carrinho */
+.item-carrinho {
+  display: flex;
+  justify-content: space-between; /* Nome do produto e preço/extremos */
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+/* Resumo do carrinho (desconto e total) */
+.resumo-carrinho {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+
+/* Linhas do resumo */
+.linha-resumo {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
